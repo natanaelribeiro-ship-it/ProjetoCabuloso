@@ -6,7 +6,7 @@ Este projeto consiste em um sistema de gestão acadêmica focado na simplicidade
 A aplicação realiza as operações completas de CRUD (Create, Read, Update, Delete) para o cadastro de alunos e de cursos, além de permitir o gerenciamento e o histórico de matrículas por meio de relacionamentos em banco de dados relacional.
 
 # Integrantes da Equipe
-* **[Nelson Natanael Ribeiro de Araujo Crispim]** - GitHub: [natanaelribeiro-ship-it](https://github.com/natanaelribeiro-ship-it))
+* **[Nelson Natanael Ribeiro de Araujo Crispim]** - GitHub: [natanaelribeiro-ship-it](https://github.com/natanaelribeiro-ship-it)
 * **[Nayara Melissa Mateus de Medeiros]** - GitHub: [nayaramts](https://github.com/nayaramts)
 * **[Isaac Ruliver Peixoto da Silva]** - GitHub: [ruliverisaac-criar](https://github.com/ruliverisaac-create)
 
