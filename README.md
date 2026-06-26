@@ -5,19 +5,14 @@ Este projeto consiste em um sistema de gestão acadêmica focado na simplicidade
 
 A aplicação realiza as operações completas de CRUD (Create, Read, Update, Delete) para o cadastro de alunos e de cursos, além de permitir o gerenciamento e o histórico de matrículas por meio de relacionamentos em banco de dados relacional.
 
----
-
 # Integrantes da Equipe
-* **[Nelson Natanael Ribeiro de Araujo Crispim]** - GitHub: [@usuario1](https://github.com/usuario1)
-* **[]** - GitHub: [@usuario2](https://github.com/usuario2)
-* **[]** - GitHub: [@usuario3](https://github.com/usuario3)
-
----
+* **[Nelson Natanael Ribeiro de Araujo Crispim]** - GitHub: [natanaelribeiro-ship-it](https://github.com/natanaelribeiro-ship-it))
+* **[Nayara Melissa Mateus de Medeiros]** - GitHub: [nayaramts](https://github.com/nayaramts)
+* **[Isaac Ruliver Peixoto da Silva]** - GitHub: [ruliverisaac-criar](https://github.com/ruliverisaac-create)
 
 # Tecnologias Previstas (Opcional)
-* **Linguagem:** [Ex: Java / C# / Python / PHP]
-* **Banco de Dados:** [Ex: MySQL / PostgreSQL / SQLite]
+* **Linguagem:** [Java]
+* **Banco de Dados:** [MySQL]
 
----
 *Projeto desenvolvido como trabalho final da disciplina de Programação com Acesso a Banco de Dados - 2026.*# ProjetoCabuloso
 Sistema de cadastro e gerenciamento de alunos e cursos 
