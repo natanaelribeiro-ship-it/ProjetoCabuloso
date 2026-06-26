@@ -13,6 +13,5 @@ A aplicação realiza as operações completas de CRUD (Create, Read, Update, De
 # Tecnologias Previstas (Opcional)
 * **Linguagem:** [Java]
 * **Banco de Dados:** [MySQL]
+* **Ferramentas:** [MySQLWorkbench e Github]
 
-*Projeto desenvolvido como trabalho final da disciplina de Programação com Acesso a Banco de Dados - 2026.*# ProjetoCabuloso
-Sistema de cadastro e gerenciamento de alunos e cursos 
