@@ -10,7 +10,7 @@ A aplicação realiza as operações completas de CRUD (Create, Read, Update, De
 * **[Nayara Melissa Mateus de Medeiros]** - GitHub: [nayaramts](https://github.com/nayaramts)
 * **[Isaac Ruliver Peixoto da Silva]** - GitHub: [ruliverisaac-criar](https://github.com/ruliverisaac-create)
 
-# Tecnologias Previstas (Opcional)
+# Tecnologias Utilizadas
 * **Linguagem:** [Java]
 * **Banco de Dados:** [MySQL]
 * **Ferramentas:** [MySQLWorkbench e Github]
