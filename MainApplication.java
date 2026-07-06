@@ -1,8 +1,11 @@
-import java.sql.*;
+mport java.sql.*;
 import java.util.Scanner;
+import java.text.SimpleDateFormat;
+
 
 public class MainApplication {
     private static final Scanner scanner = new Scanner(System.in);
+    private static final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
     public static void main(String[] args) {
         int opcao = -1;
@@ -31,7 +34,7 @@ public class MainApplication {
 
 
     // 1. CRUD ALUNOS
-    
+
     private static void menuAlunos() throws SQLException {
         System.out.println("\n--- Menu Alunos ---");
         System.out.println("1. Cadastrar Aluno\n2. Listar Alunos\n3. Atualizar Aluno\n4. Excluir Aluno\n5. Voltar");
@@ -42,16 +45,24 @@ public class MainApplication {
             case 1 -> {
                 System.out.print("Nome: "); String nome = scanner.nextLine();
                 System.out.print("Email: "); String email = scanner.nextLine();
-                System.out.print("Data de Nascimento (AAAA-MM-DD): "); String dataNasc = scanner.nextLine();
+                System.out.print("Data de Nascimento (DD/MM/AAAA): "); String dataNasc = scanner.nextLine();
                 
                 String sql = "INSERT INTO alunos (nome, email, data_nascimento) VALUES (?, ?, ?)";
                 try (Connection conn = DatabaseConnection.getConnection(); 
                      PreparedStatement stmt = conn.prepareStatement(sql)) {
+                    
+                    // AQUI NÓS USAMOS O SEU 'sdf' DE VERDADE:
+                    sdf.setLenient(false); 
+                    java.util.Date dataConvertida = sdf.parse(dataNasc); 
+                    java.sql.Date dataSql = new java.sql.Date(dataConvertida.getTime());
+                    
                     stmt.setString(1, nome);
                     stmt.setString(2, email);
-                    stmt.setDate(3, Date.valueOf(dataNasc));
+                    stmt.setDate(3, dataSql);
                     stmt.executeUpdate();
-                    System.out.println("✔ Aluno cadastrado com sucesso!");
+                    System.out.println("Aluno cadastrado com sucesso!");
+                } catch (Exception e) {
+                    System.out.println(" Erro no cadastro! Certifique-se de digitar a data no formato DD/MM/AAAA.");
                 }
             }
             case 2 -> {
@@ -61,7 +72,9 @@ public class MainApplication {
                      ResultSet rs = stmt.executeQuery(sql)) {
                     System.out.println("\nID | Nome | Email | Data Nasc.");
                     while (rs.next()) {
-                        System.out.printf("%d | %s | %s | %s\n", rs.getInt("id_aluno"), rs.getString("nome"), rs.getString("email"), rs.getDate("data_nascimento"));
+                        // Formata a data do banco de volta para o padrão BR ao listar
+                        String dataFormatada = sdf.format(rs.getDate("data_nascimento"));
+                        System.out.printf("%d | %s | %s | %s\n", rs.getInt("id_aluno"), rs.getString("nome"), rs.getString("email"), dataFormatada);
                     }
                 }
             }
@@ -77,7 +90,7 @@ public class MainApplication {
                     stmt.setString(2, email);
                     stmt.setInt(3, id);
                     int rows = stmt.executeUpdate();
-                    System.out.println(rows > 0 ? "✔ Aluno atualizado!" : "❌ Aluno não encontrado.");
+                    System.out.println(rows > 0 ? "Aluno atualizado!" : " Aluno não encontrado.");
                 }
             }
             case 4 -> {
@@ -87,12 +100,12 @@ public class MainApplication {
                      PreparedStatement stmt = conn.prepareStatement(sql)) {
                     stmt.setInt(1, id);
                     int rows = stmt.executeUpdate();
-                    System.out.println(rows > 0 ? "✔ Aluno removido!" : "❌ Aluno não encontrado.");
+                    System.out.println(rows > 0 ? " Aluno removido!" : "Aluno não encontrado.");
                 }
             }
         }
     }
-
+   
     // 2. CRUD CURSOS
 
     private static void menuCursos() throws SQLException {
@@ -114,7 +127,7 @@ public class MainApplication {
                     stmt.setString(2, desc);
                     stmt.setInt(3, ch);
                     stmt.executeUpdate();
-                    System.out.println("✔ Curso cadastrado com sucesso!");
+                    System.out.println(" Curso cadastrado com sucesso!");
                 }
             }
             case 2 -> {
@@ -140,7 +153,7 @@ public class MainApplication {
                     stmt.setInt(2, ch);
                     stmt.setInt(3, id);
                     int rows = stmt.executeUpdate();
-                    System.out.println(rows > 0 ? "✔ Curso atualizado!" : "❌ Curso não encontrado.");
+                    System.out.println(rows > 0 ? " Curso atualizado!" : " Curso não encontrado.");
                 }
             }
             case 4 -> {
@@ -150,7 +163,7 @@ public class MainApplication {
                      PreparedStatement stmt = conn.prepareStatement(sql)) {
                     stmt.setInt(1, id);
                     int rows = stmt.executeUpdate();
-                    System.out.println(rows > 0 ? "✔ Curso removido!" : "❌ Curso não encontrado.");
+                    System.out.println(rows > 0 ? " Curso removido!" : " Curso não encontrado.");
                 }
             }
         }
@@ -176,7 +189,7 @@ public class MainApplication {
                     stmt.setInt(1, idAluno);
                     stmt.setInt(2, idCurso);
                     stmt.executeUpdate();
-                    System.out.println("✔ Aluno matriculado com sucesso!");
+                    System.out.println(" Aluno matriculado com sucesso!");
                 }
             }
             case 2 -> {
@@ -204,7 +217,7 @@ public class MainApplication {
                     stmt.setString(1, status);
                     stmt.setInt(2, id);
                     int rows = stmt.executeUpdate();
-                    System.out.println(rows > 0 ? "✔ Status alterado!" : "❌ Matrícula não encontrada.");
+                    System.out.println(rows > 0 ? " Status alterado!" : " Matrícula não encontrada.");
                 }
             }
             case 4 -> {
@@ -214,9 +227,10 @@ public class MainApplication {
                      PreparedStatement stmt = conn.prepareStatement(sql)) {
                     stmt.setInt(1, id);
                     int rows = stmt.executeUpdate();
-                    System.out.println(rows > 0 ? "✔ Matrícula excluída com sucesso!" : "❌ Matrícula não encontrada.");
+                    System.out.println(rows > 0 ? " Matrícula excluída com sucesso!" : " Matrícula não encontrada.");
                 }
             }
         }
     }
 }
+
