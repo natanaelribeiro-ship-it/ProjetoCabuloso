@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS alunos (
     data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- 4. Criação da Tabela de Matrículas (Relacionamento e Histórico)
+
 CREATE TABLE IF NOT EXISTS matriculas (
     id_matricula INT AUTO_INCREMENT PRIMARY KEY,
     id_aluno INT NOT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS matriculas (
     FOREIGN KEY (id_curso) REFERENCES cursos(id_curso) ON DELETE CASCADE
 );
 
--- 5. Inserção de Dados de Exemplo (Opcional, para testes iniciais)
+
 INSERT INTO cursos (nome, descricao, carga_horaria) VALUES 
 ('Análise e Desenvolvimento de Sistemas', 'Curso focado em desenvolvimento de software.', 2000),
 ('Engenharia de Software', 'Foco em arquitetura e qualidade de software.', 3200);
