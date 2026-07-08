@@ -51,7 +51,7 @@ public class MainApplication {
                 try (Connection conn = DatabaseConnection.getConnection(); 
                      PreparedStatement stmt = conn.prepareStatement(sql)) {
                     
-                    // AQUI NÓS USAMOS O SEU 'sdf' DE VERDADE:
+             
                     sdf.setLenient(false); 
                     java.util.Date dataConvertida = sdf.parse(dataNasc); 
                     java.sql.Date dataSql = new java.sql.Date(dataConvertida.getTime());
