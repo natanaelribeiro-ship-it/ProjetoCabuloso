@@ -19,3 +19,5 @@ A aplicação realiza as operações completas de CRUD (Create, Read, Update, De
 * **Antes de começar, certifique-se de ter instalado em sua máquina o ambiente de desenvolvimento Java e o servidor do banco de dados MySQL ativo. Também será necessário o arquivo do driver de conexão do MySQL para que o Java consiga conversar com o banco.**
 
 # Diagramas produzidos
+<img width="1185" height="883" alt="image" src="https://github.com/user-attachments/assets/d4f1cf73-9e47-49e2-aad1-d6e1db990a27" />
+
