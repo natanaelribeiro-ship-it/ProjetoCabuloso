@@ -20,7 +20,8 @@ A aplicação realiza as operações completas de CRUD (Create, Read, Update, De
 *  **Ao iniciar o software você vai ter as opções de alunos, cursos, matriculas e sair. E em cada objeto vai ter as opções cadastrar, listar, excluir, atualizar e sair. Todas as opções são listadas por numeros.**
 
 # Diagramas produzidos
-<img width="1185" height="883" alt="image" src="https://github.com/user-attachments/assets/d4f1cf73-9e47-49e2-aad1-d6e1db990a27" />
+<img width="707" height="707" alt="image" src="https://github.com/user-attachments/assets/f0b3eefd-fde4-49e3-9702-3ab22f36cc55" />
+
 
 # Capturas de tela do sistema
 
