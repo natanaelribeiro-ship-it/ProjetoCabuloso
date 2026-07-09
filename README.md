@@ -18,7 +18,7 @@ A aplicação realiza as operações completas de CRUD (Create, Read, Update, De
 # Instruções
 * **Antes de começar, certifique-se de ter instalado em sua máquina o ambiente de desenvolvimento Java e o servidor do banco de dados MySQL ativo. Também será necessário o arquivo do driver de conexão do MySQL para que o Java consiga conversar com o banco.**
 *  **Ao iniciar o software você vai ter as opções de alunos, cursos, matriculas e sair. E em cada objeto vai ter as opções cadastrar, listar, excluir, atualizar e sair. Todas as opções são listadas por numeros.**
-*  **ara o software funcionar e conseguir conversar com o banco de dados ele precisa do arquivo MySQl connector/.jar, ele vai ser o driver tradutor.**
+*  **Para o software funcionar e conseguir conversar com o banco de dados ele precisa do arquivo MySQl connector/.jar, ele vai ser o driver tradutor.**
 
 # Diagramas produzidos
 <img width="707" height="707" alt="image" src="https://github.com/user-attachments/assets/f0b3eefd-fde4-49e3-9702-3ab22f36cc55" />
